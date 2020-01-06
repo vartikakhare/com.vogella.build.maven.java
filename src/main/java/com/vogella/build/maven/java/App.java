@@ -17,7 +17,7 @@ public class App
         System.out.println( "Hello World!" );
 
         System.out.println("Starting Testing------");
-        File file = new File(System.getProperty("user.dir")+"/src/test/resources/chromedriver.exe");
+        File file = new File(System.getProperty("user.dir")+"/src/java/resources/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com");

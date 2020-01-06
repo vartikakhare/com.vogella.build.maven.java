@@ -1,11 +1,9 @@
 package com.vogella.build.maven.java;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 public class TestOne {
 
@@ -13,7 +11,7 @@ public class TestOne {
 
         //WebDriverManager.chromedriver().setup();
         System.out.println("Starting Testing------");
-        File file = new File(System.getProperty("user.dir")+"/src/test/resources/chromedriver.exe");
+        File file = new File(System.getProperty("user.dir")+"/src/java/resources/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.google.com");
