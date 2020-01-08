@@ -49,13 +49,6 @@
       <version>2.2.4</version>
       <scope>test</scope>
     </dependency>
-
-	<!-- https://mvnrepository.com/artifact/org.openqa.selenium.webdriver/webdriver-common -->
-	<dependency>
-	    <groupId>org.openqa.selenium.webdriver</groupId>
-	    <artifactId>webdriver-common</artifactId>
-	    <version>0.5.524</version>
-	</dependency>
 	
   </dependencies>
 </project>
