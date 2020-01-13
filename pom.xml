@@ -8,26 +8,31 @@
   <name>com.vogella.build.maven.java</name>
   <url>http://maven.apache.org</url>
   
-  <build>
-	  <plugins>
-	    <plugin>
-	      <!-- Build an executable JAR -->
-	      <groupId>org.apache.maven.plugins</groupId>
-	      <artifactId>maven-jar-plugin</artifactId>
-	      <version>3.1.0</version>
-	      <configuration>
-	        <archive>
-	          <manifest>
-	            <addClasspath>true</addClasspath>
-	            <classpathPrefix>lib/</classpathPrefix>
-	            <mainClass>App</mainClass>
-	          </manifest>
-	        </archive>
-	      </configuration>
-	    </plugin>
-	  </plugins>
-  </build>
-
+  <profiles>
+	  <profile>
+	    <id>arq-jbossas-openshift</id>
+	    <build>
+	        <plugins>
+	            <plugin>
+	                <artifactId>maven-surefire-plugin</artifactId>
+	                <configuration>
+	                    <systemPropertyVariables>
+	                        <arquillian.launch>openshift</arquillian.launch>
+	                    </systemPropertyVariables>
+	                </configuration>
+	            </plugin>
+	        </plugins>
+	    </build>
+	    <dependencies>
+	        <dependency>
+	            <groupId>org.jboss.arquillian.container</groupId>
+	            <artifactId>arquillian-openshift-express</artifactId>
+	            <version>1.0.0.Beta1</version>
+	            <scope>test</scope>
+	        </dependency>
+	    </dependencies>
+	 </profile>
+ </profiles>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -36,12 +41,12 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <!--
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>3.0.0</version>
-    </dependency>
+    </dependency> -->
     
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
@@ -57,6 +62,27 @@
 	    <version>6.0</version>
 	    <scope>test</scope>
 	</dependency>
+	
+	<!-- Selenium dependency -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>2.13.0</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- selenium-client-factory dependencies -->
+    <dependency>
+        <groupId>com.saucelabs.selenium</groupId>
+        <artifactId>sauce-ondemand-driver</artifactId>
+        <version>2.4</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.saucelabs.selenium</groupId>
+        <artifactId>selenium-client-factory</artifactId>
+        <version>2.4</version>
+        <scope>test</scope>
+    </dependency>
     
 	
   </dependencies>
