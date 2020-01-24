@@ -10,7 +10,6 @@
   
   <profiles>
 	  <profile>
-	    <id>arq-jbossas-openshift</id>
 	    <build>
 	        <plugins>
 	            <plugin>
@@ -21,26 +20,18 @@
 	                    </systemPropertyVariables>
 	                </configuration>
 	            </plugin>
-		    <plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-compiler-plugin</artifactId>
-		        <version>3.8.1</version>
-		        <configuration>
-		            <source>1.8</source>
-		            <target>1.8</target>
-		        </configuration>
-		     </plugin>
+	            <plugin>
+		            <groupId>org.apache.maven.plugins</groupId>
+		            <artifactId>maven-compiler-plugin</artifactId>
+		            <version>3.8.1</version>
+		            <configuration>
+		                <source>1.8</source>
+		                <target>1.8</target>
+		            </configuration>
+		        </plugin>
 	        </plugins>
 	    </build>
-	    <dependencies>
-	        <dependency>
-	            <groupId>org.jboss.arquillian.container</groupId>
-	            <artifactId>arquillian-openshift-express</artifactId>
-	            <version>1.0.0.Beta1</version>
-	            <scope>test</scope>
-	        </dependency>
-	    </dependencies>
-	 </profile>
+	  </profile>
  </profiles>
   <dependencies>
     <dependency>
@@ -65,5 +56,11 @@
         <version>2.13.0</version>
         <scope>test</scope>
     </dependency>
+    <dependency>
+	  <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-compiler-plugin</artifactId>
+	  <version>3.8.1</version>
+	  <type>maven-plugin</type>
+	</dependency>
   </dependencies>
 </project>
