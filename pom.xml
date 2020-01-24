@@ -13,14 +13,6 @@
 	    <build>
 	        <plugins>
 	            <plugin>
-	                <artifactId>maven-surefire-plugin</artifactId>
-	                <configuration>
-	                    <systemPropertyVariables>
-	                        <arquillian.launch>openshift</arquillian.launch>
-	                    </systemPropertyVariables>
-	                </configuration>
-	            </plugin>
-	            <plugin>
 		            <groupId>org.apache.maven.plugins</groupId>
 		            <artifactId>maven-compiler-plugin</artifactId>
 		            <version>3.8.1</version>
