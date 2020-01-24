@@ -137,9 +137,9 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
+                        <!-- <configuration>
                             <skip>true</skip>
-                        </configuration>
+                        </configuration> -->
                     </plugin>
                     <plugin>
                         <artifactId>maven-war-plugin</artifactId>
