@@ -8,31 +8,6 @@
   <name>com.vogella.build.maven.java</name>
   <url>http://maven.apache.org</url>
   
-  <profiles>
-	  <profile>
-	    <id>arq-jbossas-openshift</id>
-	    <build>
-	        <plugins>
-	            <plugin>
-	                <artifactId>maven-surefire-plugin</artifactId>
-	                <configuration>
-	                    <systemPropertyVariables>
-	                        <arquillian.launch>openshift</arquillian.launch>
-	                    </systemPropertyVariables>
-	                </configuration>
-	            </plugin>
-	        </plugins>
-	    </build>
-	    <dependencies>
-	        <dependency>
-	            <groupId>org.jboss.arquillian.container</groupId>
-	            <artifactId>arquillian-openshift-express</artifactId>
-	            <version>1.0.0.Beta1</version>
-	            <scope>test</scope>
-	        </dependency>
-	    </dependencies>
-	 </profile>
- </profiles>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
