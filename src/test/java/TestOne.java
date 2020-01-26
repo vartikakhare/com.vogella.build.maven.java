@@ -17,10 +17,9 @@ public class TestOne {
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         WebDriver driver = new ChromeDriver();
         driver.get("http://car-store-app-git-mymvnproject.apps.us-west-1.starter.openshift-online.com/");
-        //http://car-store-app-git-mymvnproject.apps.us-west-1.starter.openshift-online.com/
-        Thread.sleep(10000);
+        //Thread.sleep(10000);
         driver.findElement(By.xpath("//input[@type='submit']")).submit();
-        Thread.sleep(10000);
+        //Thread.sleep(10000);
 
         String textonSite="Available Brands";
         String str = driver.findElement(By.tagName("h1")).getText();
